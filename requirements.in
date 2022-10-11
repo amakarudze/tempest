@@ -1,0 +1,13 @@
+coverage>=6.4.4,<6.5
+Django>=4.1.1,<4.2
+dj-database-url==1.0.0
+factory-boy==3.2.1
+flake8==5.0.4
+ipython
+psycopg2-binary
+pytest==7.1.3
+pytest-django
+pytest-dotenv
+pytest-factoryboy
+python-dotenv== 0.21.0
+python-nmap==0.7.1
