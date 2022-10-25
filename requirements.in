@@ -4,6 +4,7 @@ Django>=4.1.1,<4.2
 dj-database-url==1.0.0
 factory-boy==3.2.1
 flake8==5.0.4
+flake8-black==0.3.3
 ipython
 psycopg2-binary
 pytest==7.1.3
