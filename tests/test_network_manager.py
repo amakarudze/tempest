@@ -5,16 +5,9 @@ from pytest_django.asserts import (
     assertTemplateUsed,
 )
 
-from network_manager.models import Device
 
-
-def test_device_model_string_representation():
-    device = Device.objects.create(
-        name="email-29.baker-salazar.com",
-        mac_address="66:d3:cb:e3:81:a2",
-        ip_address="172.27.184.68",
-    )
-    assert str(device) == "email-29.baker-salazar.com - 66:d3:cb:e3:81:a2"
+def test_device_model_string_representation(device1):
+    assert str(device1) == "email-29.baker-salazar.com - 66:d3:cb:e3:81:a2"
 
 
 def test_home_view_anonymous_user(client):

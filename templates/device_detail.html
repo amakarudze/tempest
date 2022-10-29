@@ -3,5 +3,11 @@
 {% block title %}Device Details {% endblock title %}
 
 {% block content %}
+<h2>Device Details</h2>
+
+<form>
+    {% csrf_token %}
+    {{ form.as_p }}
+</form>
 
 {% endblock content %}
