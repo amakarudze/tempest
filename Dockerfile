@@ -1,5 +1,4 @@
-FROM ubuntu:latest
-FROM python:3.9-slim-bullseye
+FROM --platform=linux/amd64 python:3.10-bullseye
 
 LABEL maintainer="makarudze.com"
 
@@ -7,8 +6,9 @@ ENV PYTHONUNBUFFERED 1
 
 # Install dependencies.
 COPY ./requirements.txt /tmp/requirements.txt
-COPY ./app /app
-WORKDIR /app
+
+COPY . /code
+WORKDIR /code
 EXPOSE 8000
 
 RUN python -m venv /py && \
