@@ -6,6 +6,7 @@ ENV PYTHONUNBUFFERED 1
 
 # Install dependencies.
 COPY ./requirements.txt /tmp/requirements.txt
+COPY ./dev-requirements.txt /tmp/dev-requirements.txt
 
 COPY . /code
 WORKDIR /code
@@ -14,6 +15,7 @@ EXPOSE 8000
 RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
     /py/bin/pip install -r /tmp/requirements.txt && \
+    /py/bin/pip install -r /tmp/dev-requirements.txt && \
     rm -rf /tmp && \
     adduser \
     --disabled-password \
