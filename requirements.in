@@ -11,4 +11,5 @@ pytest==7.1.3
 pytest-django
 pytest-dotenv
 pytest-factoryboy
+python-daemon==3.0.1
 python-dotenv== 0.21.0

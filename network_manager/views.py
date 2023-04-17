@@ -1,3 +1,5 @@
+import nmap
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
 from django.views.generic.edit import UpdateView
@@ -34,3 +36,15 @@ class DeviceDetailView(LoginRequiredMixin, UpdateView):
 
 class NetworkTrafficView(LoginRequiredMixin, TemplateView):
     template_name = "network_traffic.html"
+    model = Device
+
+    def get_context_data(self, **kwargs):
+        nm = nmap.PortScanner()
+        network_hosts = nm.scan('192.168.1.0/24', arguments='-O --osscan-guess --privileged')
+        context = super().get_context_data(**kwargs)
+        context["network_hosts"] = network_hosts
+        return context
+
+
+class DeviceDetailView(LoginRequiredMixin, UpdateView):
+    slug_url_kwarg = "uuid"
