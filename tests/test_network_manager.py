@@ -43,4 +43,4 @@ def test_network_traffic_view_anonymous_user(client):
 def test_network_traffic_view_authenticated_user(user_client):
     response = user_client.get(reverse("network_traffic"))
     assert response.status_code == 200
-    assertTemplateUsed(response, "network_traffic.html")
+    assertTemplateUsed(response, "network_report.html")

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Network Report{% endblock title %}
+
+{% block content %}
+    <section class="py-2">
+        <div class="container px-4 px-lg-5 mt-2">
+        <h2 class="text-center py-4">Network Report</h2>
+            <!-- DataTables Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Network Report</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                  <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                      <div class="row">
+                          <div class="col-sm-12">
+                              <table class="table table-bordered dataTable" id="dataTable" width="100%"
+                                     cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                  <thead class="bg-gradient-light">
+                    <tr role="row">
+                        <th scope="col" class="sorting_asc text-primary" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                            aria-sort="ascending text-primary" aria-label="IP: activate to sort column descending">IP</th>
+                        <th scope="col" class="sorting text-primary" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                            aria-label="Protocol: activate to sort column ascending">Protocol</th>
+                        <th scope="col" class="sorting text-primary" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                            aria-label="Port ID: activate to sort column ascending">Port ID</th>
+                        <th scope="col" class="sorting text-primary" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                            aria-label="Service: activate to sort column ascending">Service</th>
+                        <th scope="col" class="sorting text-primary" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                            aria-label="CPE: activate to sort column ascending">CPE</th>
+                        <th scope="col" class="sorting text-primary" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                            aria-label="Advisories: activate to sort column ascending">Advisories</th>
+                    </tr>
+
+                  </thead>
+
+                  <tbody>
+                    {% for row in rows %}
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+                  </tbody>
+                </table>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    {{ network_hosts }}
+
+{% endblock content %}

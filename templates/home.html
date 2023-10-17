@@ -3,7 +3,79 @@
 {% block title %} Device List {% endblock %}
 
 {% block content %}
-    
-    <h2>Device List</h2>
+
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-3">
+            <div class="text-center text-white">
+                <h3 class="display-5 fw-bolder">Network Scan Details</h3>
+                <p class="lead fw-normal text-white-50 mb-0">Last run: {{ nmap_run.date_run }}</p>
+                <p class="lead fw-normal text-white-50 mb-0">Command: {{ nmap_run.args }}</p>
+                <h4 class="display-6 fw-bolder">Run Statistics</h4>
+                <p class="lead fw-normal text-white-50 mb-0">Hosts Up: {{ runstats.hosts_up }}</p>
+                <p class="lead fw-normal text-white-50 mb-0">Hosts Down: {{ runstats.hosts_down }}</p>
+                <p class="lead fw-normal text-white-50 mb-0">Hosts Total: {{ runstats.hosts_total }}</p>
+            </div>
+        </div>
+    </header>
+
+    {% for host in nmaprun %}
+       {{ host }}
+        <br>
+    {% endfor %}
+
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            {% if host_list %}
+            {% for host in host_list %}
+            {% if forloop.first %}
+            <div class="row justify-content-center">{% endif %}
+                <div class="col-md-3 mb-5">
+                    <div class="card h-100">
+                        {% if host.known %}
+                        <div class="card-header bg-success">
+                             <!--Host Mac address -->
+                             <h4>MAC Address: {{ host.mac_address }}</h4>
+                        </div>
+                        {% else %}
+                            <div class="card-header bg-warning">
+                             <!--Host Mac address -->
+                             <h4>MAC Address: {{ host.mac_address }}</h4>
+                        </div>
+                        {% endif %}
+                        <!-- Host details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Vendor-->
+                                <h5 class="fw-bolder">Vendor: {{ host.vendor }}</h5>
+                                <br>
+                                <!-- Hostname -->
+                                <p>Hostname: {{ host.hostname }}</p>
+                                <!-- Host IP Address-->
+                                <p>IP Address: {{ host.ipv4_address}}</p>
+                                <p>Device Known: {% if host.known %} <i class="bi bi-check-lg text-success"></i>
+                                {% else %} <i class="bi bi-x-lg text-danger"></i> {% endif %}</p>
+                                <p>Host Prohibited: {% if host.prohibited %} <i class="bi bi-check-lg text-success"></i>
+                                {% else %} <i class="bi bi-x-lg text-danger"></i> {% endif %}</p>
+                                <p>Status: {{ host.status_state }}</p>
+                            </div>
+                        </div>
+                        <!-- Host actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-primary mt-auto" href="{% url 'host_detail' host.uuid%}">
+                                View details</a></div>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:4 %}</div><div class="row">{% endif %}
+                {% if forloop.last %}</div>{% endif %}
+                {% endfor %}
+                {% else %}
+                <h3>Seems there are no devices connected to your network!</h3>
+                {% endif %}
+        </div>
+    </section>
 
 {% endblock %}

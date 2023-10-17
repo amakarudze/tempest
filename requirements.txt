@@ -4,6 +4,10 @@
 #
 #    pip-compile
 #
+appdirs==1.4.4
+    # via pyshark
+appnope==0.1.3
+    # via ipython
 asgiref==3.5.2
     # via django
 asttokens==2.0.8
@@ -22,14 +26,17 @@ coverage==6.4.4
     # via -r requirements.in
 decorator==5.1.1
     # via ipython
+defusedxml==0.7.1
+    # via -r requirements.in
 dj-database-url==1.0.0
     # via -r requirements.in
 django==4.1.1
     # via
     #   -r requirements.in
     #   dj-database-url
-docutils==0.19
-    # via python-daemon
+    #   django-daemon-command
+django-daemon-command==2020.12.3
+    # via -r requirements.in
 executing==1.0.0
     # via stack-data
 factory-boy==3.2.1
@@ -52,8 +59,8 @@ ipython==8.5.0
     # via -r requirements.in
 jedi==0.18.1
     # via ipython
-lockfile==0.12.2
-    # via python-daemon
+lxml==4.9.3
+    # via pyshark
 matplotlib-inline==0.1.6
     # via ipython
 mccabe==0.7.0
@@ -61,7 +68,9 @@ mccabe==0.7.0
 mypy-extensions==0.4.3
     # via black
 packaging==21.3
-    # via pytest
+    # via
+    #   pyshark
+    #   pytest
 parso==0.8.3
     # via jedi
 pathspec==0.10.1
@@ -92,6 +101,8 @@ pygments==2.13.0
     # via ipython
 pyparsing==3.0.9
     # via packaging
+pyshark==0.6
+    # via -r requirements.in
 pytest==7.1.3
     # via
     #   -r requirements.in
@@ -103,8 +114,6 @@ pytest-django==4.5.2
 pytest-dotenv==0.5.2
     # via -r requirements.in
 pytest-factoryboy==2.5.0
-    # via -r requirements.in
-python-daemon==3.0.1
     # via -r requirements.in
 python-dateutil==2.8.2
     # via faker
@@ -120,6 +129,8 @@ sqlparse==0.4.2
     # via django
 stack-data==0.5.0
     # via ipython
+termcolor==2.3.0
+    # via pyshark
 tomli==2.0.1
     # via
     #   black
@@ -133,6 +144,5 @@ typing-extensions==4.3.0
     # via pytest-factoryboy
 wcwidth==0.2.5
     # via prompt-toolkit
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools
+xmltodict==0.13.0
+    # via -r requirements.in

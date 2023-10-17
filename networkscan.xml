@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/local/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Mon Oct 16 20:03:51 2023 as: nmap -v -n -p- -sT -sV -O -&#45;osscan-limit -&#45;max-os-tries 3 -oX networkscan.xml 172.20.10.0/24 -->
+<nmaprun scanner="nmap" args="nmap -v -n -p- -sT -sV -O -&#45;osscan-limit -&#45;max-os-tries 3 -oX networkscan.xml 172.20.10.0/24" start="1697486631" startstr="Mon Oct 16 20:03:51 2023" version="7.93" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="ARP Ping Scan" time="1697486631"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.20.10.1" addrtype="ipv4"/>
+<address addr="2E:7C:F2:DE:BF:64" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="ARP Ping Scan" time="1697486633" extrainfo="15 total hosts"/>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.0" addrtype="ipv4"/>
+</host>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.3" addrtype="ipv4"/>
+</host>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.4" addrtype="ipv4"/>
+</host>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.5" addrtype="ipv4"/>
+</host>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.6" addrtype="ipv4"/>
+</host>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.7" addrtype="ipv4"/>
+</host>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.8" addrtype="ipv4"/>
+</host>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.9" addrtype="ipv4"/>
+</host>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.10" addrtype="ipv4"/>
+</host>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.11" addrtype="ipv4"/>
+</host>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.12" addrtype="ipv4"/>
+</host>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.13" addrtype="ipv4"/>
+</host>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.14" addrtype="ipv4"/>
+</host>
+<host><status state="down" reason="no-response" reason_ttl="0"/>
+<address addr="172.20.10.15" addrtype="ipv4"/>
+</host>
+<taskbegin task="Connect Scan" time="1697486633"/>
+<taskprogress task="Connect Scan" time="1697486679" percent="0.30"/>
+<taskprogress task="Connect Scan" time="1697486709" percent="0.44"/>
+<taskprogress task="Connect Scan" time="1697486739" percent="0.61"/>
+<taskprogress task="Connect Scan" time="1697486769" percent="3.65" remaining="3587" etc="1697490356"/>
+<taskprogress task="Connect Scan" time="1697486799" percent="12.69" remaining="1142" etc="1697487941"/>
+<taskprogress task="Connect Scan" time="1697486829" percent="16.34" remaining="1004" etc="1697487832"/>
+<taskprogress task="Connect Scan" time="1697487039" percent="30.10" remaining="943" etc="1697487982"/>
+<taskprogress task="Connect Scan" time="1697487171" percent="38.10" remaining="874" etc="1697488045"/>
+<taskprogress task="Connect Scan" time="1697487264" percent="44.03" remaining="803" etc="1697488066"/>
+<taskprogress task="Connect Scan" time="1697487342" percent="49.26" remaining="731" etc="1697488072"/>
+<taskprogress task="Connect Scan" time="1697487420" percent="54.49" remaining="658" etc="1697488077"/>
+<taskprogress task="Connect Scan" time="1697487498" percent="59.71" remaining="584" etc="1697488082"/>
+<taskprogress task="Connect Scan" time="1697487582" percent="65.07" remaining="510" etc="1697488091"/>
+<taskprogress task="Connect Scan" time="1697487672" percent="70.51" remaining="435" etc="1697488106"/>
+<taskprogress task="Connect Scan" time="1697487759" percent="75.80" remaining="360" etc="1697488118"/>
+<taskprogress task="Connect Scan" time="1697487846" percent="81.08" remaining="284" etc="1697488129"/>
+<taskprogress task="Connect Scan" time="1697488887" percent="81.41" remaining="515" etc="1697489402"/>
+<runstats><finished time="1697489933" timestr="Mon Oct 16 20:58:53 2023" summary="Nmap done at Mon Oct 16 20:58:53 2023; 14 IP addresses (1 host up) scanned in 3303.81 seconds" elapsed="3303.81" exit="error" errormsg="Strange SO_ERROR from connection to 172.20.10.1 (50 - &apos;Network is down&apos;) -&#45; bailing scan"/><hosts up="1" down="13" total="14"/>
+</runstats>
+</nmaprun>

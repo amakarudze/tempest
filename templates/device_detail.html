@@ -1,13 +1,80 @@
 {% extends "base.html" %}
 
-{% block title %}Device Details {% endblock title %}
+{% block title %} Host Details {% endblock title %}
 
 {% block content %}
-<h2>Device Details</h2>
+<h2 class="text-center mt-5 mb-5">Host Details</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mb-5">
+            <div class="card">
+                <div class="card-header text-center text-white bg-primary">
+                    <div class="card-title">
+                        <h2>Update Host Details</h2>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                            {% for field in form %}
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label">{{ field.label }}:</label>
+                                    <div class="col-md-8">
+                                    {{ field }}
+                                    </div>
+                                </div>
 
-<form>
-    {% csrf_token %}
-    {{ form.as_p }}
-</form>
+                                {% if form.errors and not form.non_field_errors %}
+                                    {% for error in field.errors %}
+                                        <div class="alert alert-danger">
+                                            <strong>{{ error }}</strong>
+                                         </div>
+                                    {% endfor %}
+                                {% endif %}
+
+                                {% if form.non_field_errors %}
+                                    {% for error in form.non_field_errors %}
+                                        <div class="alert alert-danger">
+                                            <strong>{{ error }}</strong>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+
+                            {% endfor %}
+                        <div class="row">
+                            <div class="col-md-4 offset-md-4">
+                                <button type="submit" class="btn btn-primary" id="save">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-5">
+            <div class="card">
+                <div class="card-header text-center text-white bg-success">
+                    <div class="card-title">
+                        <h2>Host Details</h2>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p><strong>Operating System: </strong>{{ host.os_name }} </p>
+                    <p><strong>MAC Address: </strong> {{ host.mac_address }}</p>
+                    {% if ports %}
+                    <p><strong>Open Ports:</strong>
+                        <ul>
+                            <li>
+                                <p><strong>Running Services:</strong>
+
+                                </p>
+                            </li>
+                        </ul>
+                    </p>
+                    {% endif %}
+                </div>
+        </div>
+    </div>
+</div>
+
 
 {% endblock content %}

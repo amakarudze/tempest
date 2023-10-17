@@ -1,9 +1,7 @@
 from django.urls import path
 
-from .views import DeviceDetailView, HomePageView, NetworkTrafficView
-
+from .views import HostDetailView, HomePageView
 urlpatterns = [
     path("", HomePageView.as_view(), name="home"),
-    path("device/<uuid:uuid>/", DeviceDetailView.as_view(), name="device_detail"),
-    path("network_traffic/", NetworkTrafficView.as_view(), name="network_traffic"),
+    path("host/<uuid:uuid>/", HostDetailView.as_view(), name="host_detail"),
 ]
